@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TuneWave Downloads</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="downloads.css">
+</head>
+<body>
+  <div class="page-shell" id="downloadsShell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="stack-row">
+          <div class="brand-mark" data-profile-avatar></div>
+          <div class="brand-copy">
+            <h2>TuneWave</h2>
+            <p>Offline Downloads</p>
+          </div>
+        </div>
+      </div>
+
+      <nav>
+        <ul class="nav-list">
+          <li><a class="nav-link" href="home.html"><span class="nav-icon">◉</span><span class="nav-text"><span class="nav-label">Home</span><span class="nav-note">Discover mixes</span></span></a></li>
+          <li><a class="nav-link" href="search.html"><span class="nav-icon">⌕</span><span class="nav-text"><span class="nav-label">Search</span><span class="nav-note">Songs and moods</span></span></a></li>
+          <li><a class="nav-link" href="Playlist.htm"><span class="nav-icon">♫</span><span class="nav-text"><span class="nav-label">Playlist</span><span class="nav-note">Curated queue</span></span></a></li>
+          <li><a class="nav-link" href="artist.html"><span class="nav-icon">🎤</span><span class="nav-text"><span class="nav-label">Artist</span><span class="nav-note">Popular creators</span></span></a></li>
+          <li><a class="nav-link active" href="downloads.html"><span class="nav-icon">⬇</span><span class="nav-text"><span class="nav-label">Downloads</span><span class="nav-note">Saved offline</span></span></a></li>
+          <li><a class="nav-link" href="your-library.html"><span class="nav-icon">🕒</span><span class="nav-text"><span class="nav-label">Your Library</span><span class="nav-note">Recently played</span></span></a></li>
+          <li><a class="nav-link" href="Upload.html"><span class="nav-icon">📤</span><span class="nav-text"><span class="nav-label">Upload Songs</span><span class="nav-note">Add your tracks</span></span></a></li>
+          <li><a class="nav-link" href="membership.html"><span class="nav-icon">💎</span><span class="nav-text"><span class="nav-label">Buy Membership</span><span class="nav-note">Unlock premium</span></span></a></li>
+          <li><a class="nav-link" href="njoy.html"><span class="nav-icon">🎟</span><span class="nav-text"><span class="nav-label">Njoy</span><span class="nav-note">Nearby films & concerts</span></span></a></li>
+          <li><a class="nav-link" href="settings.html"><span class="nav-icon">⚙️</span><span class="nav-text"><span class="nav-label">Settings</span><span class="nav-note">Theme and profile</span></span></a></li>
+          <li><a class="nav-link" href="LOGIN.html"><span class="nav-icon">↺</span><span class="nav-text"><span class="nav-label">Switch Account</span><span class="nav-note">Return to login</span></span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="content-shell">
+      <header class="topbar">
+        <div class="topbar-title">
+          <p class="eyebrow">Offline Zone</p>
+          <h1 id="greeting">Good Evening, Listener</h1>
+          <p id="todayLabel" class="muted"></p>
+        </div>
+        <div class="topbar-actions">
+          <div class="status-card">
+            <div>
+              <strong id="clock">--:--</strong>
+              <p id="dateLabel" class="muted">Loading date</p>
+            </div>
+          </div>
+          <div class="status-card">
+            <div>
+              <strong id="downloadCount">0</strong>
+              <p class="muted">offline tracks</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="downloads-main">
+        <section class="downloads-grid">
+          <section class="panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Find Downloads</p>
+                <h2>Search and filter</h2>
+              </div>
+              <button id="playAllBtn" class="button" type="button">Play All</button>
+            </div>
+            <div class="downloads-tools">
+              <div class="input-stack">
+                <label for="downloadSearch">Search tracks</label>
+                <input id="downloadSearch" class="search-field" type="text" placeholder="Search downloaded tracks or artists">
+              </div>
+              <div class="downloads-filters">
+                <button class="filter-chip active" type="button" data-filter="all">All</button>
+                <button class="filter-chip" type="button" data-filter="completed">Completed</button>
+                <button class="filter-chip" type="button" data-filter="queued">Queued</button>
+                <button class="filter-chip" type="button" data-filter="high">High quality</button>
+              </div>
+            </div>
+          </section>
+
+          <aside class="panel queue-panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Quick Stats</p>
+                <h2>Download health</h2>
+              </div>
+            </div>
+            <div class="queue-stats">
+              <article class="queue-card">
+                <strong id="totalSongsCount">0</strong>
+                <p class="muted">songs downloaded</p>
+              </article>
+              <article class="queue-card">
+                <strong id="totalDurationCount">0m</strong>
+                <p class="muted">total play time</p>
+              </article>
+              <article class="queue-card">
+                <strong id="queuedCount">0</strong>
+                <p class="muted">queued</p>
+              </article>
+            </div>
+          </aside>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Saved Tracks</p>
+              <h2>Your download list</h2>
+            </div>
+            <p id="downloadListLabel" class="muted">0 tracks shown</p>
+          </div>
+          <div class="downloads-table-head">
+            <span>#</span>
+            <span>Track</span>
+            <span class="hidden-mobile">Quality</span>
+            <span>Status</span>
+            <span>Size</span>
+            <span></span>
+          </div>
+          <div id="downloadsRows" class="downloads-rows"></div>
+        </section>
+      </main>
+
+      <footer class="player-bar upload-player-bar">
+        <div class="progress-group player-progress-top">
+          <div class="progress-line progress-line-top">
+            <span id="currentTime">0:00</span>
+            <input id="progress" class="range" type="range" min="0" max="100" value="0">
+            <span id="duration">3:12</span>
+          </div>
+        </div>
+
+        <div class="upload-player-left">
+          <div id="playerArtwork" class="upload-cover artwork artwork-e"></div>
+          <div class="upload-player-meta">
+            <h4 id="playerTitle">No song loaded</h4>
+            <p id="playerArtist">Upload songs to build downloads.</p>
+          </div>
+        </div>
+
+        <div class="upload-player-center">
+          <div class="upload-transport-row">
+            <button id="prevButton" class="transport upload-transport" type="button" aria-label="Previous song">⏮</button>
+            <button id="playButton" class="transport primary upload-play" type="button" aria-label="Play or pause">▶</button>
+            <button id="nextButton" class="transport upload-transport" type="button" aria-label="Next song">⏭</button>
+            <button id="downloadsLikeBtn" class="transport upload-like" type="button" aria-label="Like song">
+              <span class="like-burst" aria-hidden="true">
+                <span class="burst-dot burst-dot-a"></span>
+                <span class="burst-dot burst-dot-b"></span>
+                <span class="burst-dot burst-dot-c"></span>
+                <span class="burst-dot burst-dot-d"></span>
+                <span class="burst-dot burst-dot-e"></span>
+                <span class="burst-dot burst-dot-f"></span>
+              </span>
+              <span class="heart-shell" aria-hidden="true"><span class="heart-icon">♡</span></span>
+              <span class="like-label">Like</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="upload-player-right">
+          <div class="volume-wrap">
+            <button id="downloadsVolumeToggle" class="transport upload-tool" type="button" aria-label="Volume control">🎵</button>
+            <div id="downloadsVolumePopover" class="volume-popover">
+              <input id="volume" class="range vertical-volume" type="range" min="0" max="100" value="80">
+            </div>
+          </div>
+          <a id="downloadsDownloadBtn" class="transport upload-tool download-tool disabled" href="#" download aria-disabled="true" title="Download song">🎧</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="app-theme.js" defer></script>
+  <script src="app-language.js" defer></script>
+  <script src="uploaded-songs-store.js" defer></script>
+  <script src="shared-player.js" defer></script>
+  <script src="profile-sync.js" defer></script>
+  <script src="downloads.js" defer></script>
+  <script src="volume-ui.js" defer></script>
+  <script src="profile-menu.js" defer></script>
+  <script src="player-headphone.js" defer></script>
+  <script src="song-details-launcher.js" defer></script>
+  <script src="sidebar-toggle.js" defer></script>
+</body>
+</html>
